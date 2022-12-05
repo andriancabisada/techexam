@@ -7,11 +7,9 @@ const createMessage = async (req, res) => {
 
   if (message.includes("Hello") == true || message.includes("Hi"))
     response = "Welcome to StationFive";
-
-  if (message.includes("Goodbye") == true || message.includes("bye"))
+  else if (message.includes("Goodbye") == true || message.includes("bye"))
     response = "Thank  you, see you around";
-
-  response = "Sorry, I don't understand";
+  else response = "Sorry, I don't understand";
 
   const result = new messageDb({
     response_id: conversation_id,
